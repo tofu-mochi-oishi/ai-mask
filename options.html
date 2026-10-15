@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI伏せ字ガード 設定</title>
+<link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <main>
+    <h1>🛡 AI伏せ字ガード</h1>
+    <p class="muted">ChatGPT・Claude・Gemini に送信する前に、個人情報や登録した語を【氏名1】のような記号に置き換えます。AIの返答に出てきた記号は、画面上だけ元に戻して表示します。処理はすべてこのパソコンの中で行い、外部へは一切送信しません。</p>
+
+    <section>
+      <label class="switch"><input type="checkbox" id="enabled"> 伏せ字を有効にする</label>
+      <p><label><input type="checkbox" id="addNote"> AIへの注記を付ける（推奨）</label></p>
+      <p class="muted">伏せ字にしたメッセージの末尾に「記号は伏せ字にした実在の情報です」とAIへの説明を自動で付けます。付けないと、AIが記号をテンプレートの空欄と誤解して聞き返すことがあります。注記はあなたの画面には表示されません。</p>
+    </section>
+
+    <section>
+      <h2>自動で見つける情報</h2>
+      <div id="detectors" class="grid"></div>
+    </section>
+
+    <section>
+      <h2>登録語 <span class="muted" id="dictCount"></span></h2>
+      <p class="muted">社名・顧客名・案件名など、自動では見つけられない語を登録します。「記号の名前」は【社名1】のように使われます。</p>
+      <table id="dict">
+        <thead><tr><th>語</th><th>記号の名前</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <form id="addForm" class="row">
+        <input id="term" placeholder="例：株式会社サンプル" required>
+        <input id="label" placeholder="例：社名" value="社名">
+        <button type="submit">追加</button>
+      </form>
+      <p class="error" id="dictError" hidden></p>
+    </section>
+
+    <section>
+      <h2>伏せ字にしない語</h2>
+      <p class="muted">誤って伏せ字になる語を1行に1つ書きます（例：自社名、公開している代表電話番号）。</p>
+      <textarea id="exclusions" rows="4"></textarea>
+    </section>
+
+    <section>
+      <h2>知っておいてほしいこと</h2>
+      <ul class="muted">
+        <li>送信前の「うっかり」を減らす補助ツールです。すべての個人情報を確実に見つけられるわけではありません。</li>
+        <li>ファイル・画像のアップロードや音声入力の内容は対象外です。</li>
+        <li>返答のコピーボタンを押すと、元の値に戻した文章がコピーされます。このとき見出しなどの書式は簡略化されます。</li>
+        <li>記号と元の値の対応表は、ブラウザを閉じると消えます。閉じた後に過去の会話を開くと、記号のまま表示されます。</li>
+      </ul>
+    </section>
+    <p class="saved" id="saved" hidden>保存しました</p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
