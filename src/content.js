@@ -7,23 +7,9 @@
   const vault = globalThis.AIMaskVault;
   const TAG = '[AI伏せ字ガード]';
 
-  // サイトごとの入力欄・送信ボタン（見つからなければ汎用の探し方に切り替える）
-  const SITES = {
-    'chatgpt.com': {
-      editor: '#prompt-textarea',
-      send: '[data-testid="send-button"], #composer-submit-button',
-    },
-    'claude.ai': {
-      editor: 'div.ProseMirror[contenteditable="true"]',
-      send: 'button[aria-label="Send message"], button[aria-label="メッセージを送信"]',
-    },
-    'gemini.google.com': {
-      editor: 'rich-textarea [contenteditable="true"]',
-      send: 'button.send-button, button[aria-label="Send message"], button[aria-label="プロンプトを送信"]',
-    },
-  };
+  // サイトごとの入力欄・送信ボタン（src/sites.js。見つからなければ汎用の探し方に切り替える）
+  const { SITES, GENERIC_EDITOR, GENERIC_SEND } = globalThis.AIMaskSites;
   const site = SITES[location.hostname] || {};
-  const GENERIC_SEND = 'button[data-testid*="send" i], button[aria-label*="send" i], button[aria-label*="送信"]';
 
   // AIが記号を「埋め忘れたテンプレートの空欄」と誤解しないよう、伏せ字にしたメッセージの末尾に付ける注記
   const NOTE =
@@ -50,7 +36,7 @@
   function findEditor(from) {
     const el = from && from.closest && from.closest('[contenteditable="true"], textarea');
     if (el && !el.closest('.aimask-ui')) return el;
-    return (site.editor && document.querySelector(site.editor)) || document.querySelector('[contenteditable="true"], textarea');
+    return (site.editor && document.querySelector(site.editor)) || document.querySelector(GENERIC_EDITOR);
   }
 
   function findSendButton() {

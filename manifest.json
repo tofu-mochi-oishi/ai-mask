@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "matches": ["https://chatgpt.com/*", "https://claude.ai/*", "https://gemini.google.com/*"],
-      "js": ["src/detect.js", "src/vault.js", "src/content.js"],
+      "js": ["src/sites.js", "src/detect.js", "src/vault.js", "src/content.js"],
       "run_at": "document_idle"
     }
   ],

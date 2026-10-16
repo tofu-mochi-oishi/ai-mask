@@ -1,8 +1,8 @@
 # プライバシーポリシー – AI伏せ字ガード
 
-最終更新日：2026-10-15
+最終更新日：2026-10-16
 
-AI伏せ字ガード（以下「本拡張機能」）は、個人情報を収集・送信・販売しません。
+AI伏せ字ガード（以下「本拡張機能」）は、個人情報を伏せ字にするという目的のために、下の表の情報を利用者の端末内で扱います。Chromeウェブストアの区分では「個人を特定できる情報」「財務状況や支払いに関する情報」（カード番号）「ウェブサイトのコンテンツ」に当たります。これらの情報を、開発者のサーバーや第三者へ送信・販売することはありません。
 
 ## 本拡張機能が扱う情報と保存場所
 | 情報 | 用途 | 保存場所 |
@@ -26,6 +26,6 @@ nabesukishahu@gmail.com
 
 # Privacy Policy – AI Fuseji Guard (English summary)
 
-AI Fuseji Guard does not collect, transmit or sell any personal data. Text typed into the supported sites (chatgpt.com, claude.ai, gemini.google.com) is processed only on your device to replace personal information with placeholders before you send it. The placeholder-to-original mapping is kept in `chrome.storage.session` (memory, cleared when the browser closes); settings and your word list are kept in `chrome.storage.local` on your device. No analytics, advertising, tracking, remote code or remote servers are used. The text you choose to send is delivered to the AI service you use, under that service's privacy policy.
+AI Fuseji Guard handles personal data only on your device, for the single purpose of masking it. In Chrome Web Store terms this covers personally identifiable information, financial and payment information (card numbers) and website content. This data is never transmitted to the developer or any third party, and never sold. Text typed into the supported sites (chatgpt.com, claude.ai, gemini.google.com) is processed only on your device to replace personal information with placeholders before you send it. The placeholder-to-original mapping is kept in `chrome.storage.session` (memory, cleared when the browser closes); settings and your word list are kept in `chrome.storage.local` on your device. No analytics, advertising, tracking, remote code or remote servers are used. The text you choose to send is delivered to the AI service you use, under that service's privacy policy.
 
 Contact: nabesukishahu@gmail.com
