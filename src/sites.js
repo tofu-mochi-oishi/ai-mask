@@ -8,9 +8,9 @@
     'chatgpt.com': {
       name: 'ChatGPT',
       url: 'https://chatgpt.com/',
-      // ログイン前の画面では textarea[name="prompt"]、送信ボタンは「メッセージを送信します」（2026-10-16 確認）
-      editor: '#prompt-textarea, textarea[name="prompt"]',
-      send: '[data-testid="send-button"], #composer-submit-button, button[aria-label="メッセージを送信します"], button[aria-label="Send prompt"]',
+      // 2026-10-16 確認：ログイン後は div.ProseMirror と「送信」ボタン、ログイン前は textarea[name="prompt"] と「メッセージを送信します」
+      editor: '#prompt-textarea, div.ProseMirror[contenteditable="true"], textarea[name="prompt"]',
+      send: '[data-testid="send-button"], #composer-submit-button, button[aria-label="送信"], button[aria-label="Send"], button[aria-label="メッセージを送信します"], button[aria-label="Send prompt"]',
     },
     'claude.ai': {
       name: 'Claude',
