@@ -6,6 +6,8 @@ ChatGPT・Claude・Gemini に送る前に、日本語の個人情報を【氏名
 - 広告・アクセス解析・トラッキングなし
 - 権限は `storage` と、対応する3つのAIサイトだけ
 
+**インストール：** [Chromeウェブストア](https://chromewebstore.google.com/detail/hfiflaaadjbaahbacbbmlfehgnbmbabb) ／ 紹介ページ：[tofu-mochi-oishi.github.io/ai-mask](https://tofu-mochi-oishi.github.io/ai-mask/) ／ 解説記事：[note](https://note.com/tofu_mochi_oishi/n/n8f301c861942)
+
 ## できること
 1. 入力中の文章から個人情報らしき箇所を見つけ、下線と件数を表示します
 2. 送信（Enter キーまたは送信ボタン）の直前に、該当箇所を記号に置き換えてから送信します
